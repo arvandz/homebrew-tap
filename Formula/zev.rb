@@ -6,13 +6,13 @@ class Zev < Formula
   license "MIT"
   head "https://github.com/arvandz/zev.git", branch: "main"
 
-  ZIG_VERSION = "0.17.0-dev.1282+c0f9b51d8"
+  ZIG_VERSION = "0.17.0-dev.1567+f0354179a"
 
   on_linux do
     on_intel do
       resource "zig" do
-        url "https://ziglang.org/builds/zig-linux-x86_64-#{ZIG_VERSION}.tar.xz"
-        sha256 "533a1ca5d6595793725bca7641d9461a0f00dd1732dded3e4281196f5dd21736"
+        url "https://ziglang.org/builds/zig-x86_64-linux-#{ZIG_VERSION}.tar.xz"
+        sha256 "337b81a6e89e8289d31311fd7cfdd53c8bfcb1b8c4b5cfadf3363eabfb9a6daa"
       end
     end
     on_arm do
