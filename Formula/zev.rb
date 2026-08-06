@@ -35,6 +35,6 @@ class Zev < Formula
   end
 
   test do
-    assert_match "Zev version", shell_output("#{bin}/zev version")
+    assert_match "Zev version", shell_output("#{bin}/zev version 2>&1")
   end
 end
