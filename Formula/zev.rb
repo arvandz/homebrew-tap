@@ -2,7 +2,7 @@ class Zev < Formula
   desc "ML-native version control system with IPLD, Blake3, and weight-level model merging"
   homepage "https://github.com/arvandz/zev"
   url "https://github.com/arvandz/zev/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "9b8d0ec9969d3e1427ed265b8fe2df1d553709f8637946aea0c3e4ce50f6f785"
   license "MIT"
   head "https://github.com/arvandz/zev.git", branch: "main"
 
