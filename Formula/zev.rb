@@ -1,40 +1,36 @@
 class Zev < Formula
-  desc "ML-native version control system with IPLD, Blake3, and weight-level model merging"
-  homepage "https://github.com/arvandz/zev"
-  url "https://github.com/arvandz/zev/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "9b8d0ec9969d3e1427ed265b8fe2df1d553709f8637946aea0c3e4ce50f6f785"
-  license "MIT"
-  head "https://github.com/arvandz/zev.git", branch: "main"
-
-  ZIG_VERSION = "0.17.0-dev.1567+f0354179a"
-
-  on_linux do
-    on_intel do
-      resource "zig" do
-        url "https://ziglang.org/builds/zig-x86_64-linux-#{ZIG_VERSION}.tar.xz"
-        sha256 "337b81a6e89e8289d31311fd7cfdd53c8bfcb1b8c4b5cfadf3363eabfb9a6daa"
-      end
-    end
-    on_arm do
-      odie "zev: ARM64 Linux is not yet supported by this formula. Try 'brew install --HEAD' with a system Zig 0.17.0-dev install."
-    end
-  end
+  desc "Version control for code, models and data, with private team networks"
+  homepage "https://zaryn.xyz"
+  version "0.4.0"
+  license "Apache-2.0"
 
   on_macos do
-    odie "zev: macOS is not yet supported by this formula. Try 'brew install --HEAD' with a system Zig 0.17.0-dev install."
+    on_arm do
+      url "https://zaryn.xyz/dl/zev/0.4.0/zev-0.4.0-aarch64-macos.tar.gz"
+      sha256 "3b43953b911752c5fe1ece180bc6fb4f67388b18b872b97d3bf5ca0feeea5b3e"
+    end
+    on_intel do
+      url "https://zaryn.xyz/dl/zev/0.4.0/zev-0.4.0-x86_64-macos.tar.gz"
+      sha256 "3b5640cd6865e68f49fe6ea13311b02e0188fec687044bd27b9705c434c6c08b"
+    end
+  end
+  on_linux do
+    on_arm do
+      url "https://zaryn.xyz/dl/zev/0.4.0/zev-0.4.0-aarch64-linux.tar.gz"
+      sha256 "4c41228cdd76f1209d127a5956c5d8fb7d4ad430b58a22924ad8949c8e70a456"
+    end
+    on_intel do
+      url "https://zaryn.xyz/dl/zev/0.4.0/zev-0.4.0-x86_64-linux.tar.gz"
+      sha256 "a765e53d91f84d1174b4c9a7cdd9f8ceda0c465b6cceb9fb8eb0e3568c220d1b"
+    end
   end
 
   def install
-    resource("zig").stage do
-      zig_dir = Pathname.pwd
-      cd buildpath do
-        system zig_dir/"zig", "build", "-Doptimize=ReleaseSafe"
-      end
-    end
-    bin.install "zig-out/bin/zev"
+    bin.install "zev"
+    doc.install Dir["*.md", "*LICENSE*", "NOTICE"]
   end
 
   test do
-    assert_match "Zev version", shell_output("#{bin}/zev version 2>&1")
+    assert_match "zev #{version}", shell_output("#{bin}/zev --version")
   end
 end
