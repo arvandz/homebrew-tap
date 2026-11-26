@@ -1,27 +1,27 @@
 class Zev < Formula
   desc "Version control for code, models and data, with private team networks"
   homepage "https://zaryn.xyz"
-  version "0.29.0"
+  version "0.30.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://zaryn.xyz/dl/zev/0.29.0/zev-0.29.0-aarch64-macos.tar.gz"
-      sha256 "325d7f9d4fc88034e11d22a97f6ecad250ecdb9a1a34e7b1227cbd8e9a27ad80"
+      url "https://zaryn.xyz/dl/zev/0.30.0/zev-0.30.0-aarch64-macos.tar.gz"
+      sha256 "ce183dc0dc2aaf7102e23a68121f497f2121b94a09aa276d3c0ad09fffc82838"
     end
     on_intel do
-      url "https://zaryn.xyz/dl/zev/0.29.0/zev-0.29.0-x86_64-macos.tar.gz"
-      sha256 "223635baf8a6c07ffd55b3476cf60efa9424d2f8453f3b2436a9c930ac003868"
+      url "https://zaryn.xyz/dl/zev/0.30.0/zev-0.30.0-x86_64-macos.tar.gz"
+      sha256 "6f569ffc79c595aede0ef988a6a3d476393f37fac57c7d6c07bc69ea1f158964"
     end
   end
   on_linux do
     on_arm do
-      url "https://zaryn.xyz/dl/zev/0.29.0/zev-0.29.0-aarch64-linux.tar.gz"
-      sha256 "54d8d311aab3ff41be8dcf3acac75968add23f477e0e1be1936c5f44e6c5c515"
+      url "https://zaryn.xyz/dl/zev/0.30.0/zev-0.30.0-aarch64-linux.tar.gz"
+      sha256 "195ba1c0589e8e8b5d7af0e85072a420443f19925ec0d782d87ed77c0f655cb5"
     end
     on_intel do
-      url "https://zaryn.xyz/dl/zev/0.29.0/zev-0.29.0-x86_64-linux.tar.gz"
-      sha256 "2a451bdec34e06c56b8d083c22fcbec111b1fae01b9a585d67b58b88692224af"
+      url "https://zaryn.xyz/dl/zev/0.30.0/zev-0.30.0-x86_64-linux.tar.gz"
+      sha256 "75bdb95f8a61cc06e2f9c52e1054d1fc584634765b4efa5f35c8b0050485400f"
     end
   end
 
